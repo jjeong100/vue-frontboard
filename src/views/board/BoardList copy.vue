@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     fnGetList() {
-      this.requestBody = { // 데이터 전송        
+      this.requestBody = { // 데이터 전송
         keyword: this.keyword,
         page: this.page,
         size: this.size
@@ -97,24 +97,6 @@ export default {
           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
         }
       })
-    },
-    fnView(idx) {
-      this.requestBody.idx = idx
-      this.$router.push({
-        path: './detail',
-        query: this.requestBody
-      })
-    },
-    fnWrite() {
-      this.$router.push({
-        path: './write'
-      })
-    },
-    fnPage(n) {
-      if (this.page !== n) {
-        this.page = n
-        this.fnGetList()
-      }
     }
   }
 }
